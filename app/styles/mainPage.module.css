@@ -1,0 +1,111 @@
+.hero {
+    background-image:
+        linear-gradient(180deg,
+            rgba(0, 0, 0, 0.6000) 0.000%, rgba(0, 0, 0, 0.3889) 8.333%, rgba(0, 0, 0, 0.3556) 16.67%, rgba(0, 0, 0, 0.1000) 25.00%, rgba(0, 0, 0, 0.6222) 33.33%, rgba(0, 0, 0, 0.5222) 41.67%, rgba(0, 0, 0, 0.6000) 50.00%, rgba(0, 0, 0, 0.4778) 58.33%, rgba(0, 0, 0, 0.4778) 66.67%, rgba(0, 0, 0, 0.4000) 75.00%, rgba(0, 0, 0, 0.04444) 83.33%, rgba(0, 0, 0, 0.01111) 91.67%, rgba(0, 0, 0, 0.000) 100.0%),
+        url('/cover.png');
+    background-size: cover;
+    background-position: center top;
+}
+
+.trendingSection {
+    box-sizing: border-box;
+    position: absolute;
+    height: 100%;
+    border-top: solid .25rem transparent;
+    border-top-left-radius: 60% 100%;
+    border-top-right-radius: 60% 100%;
+    background: radial-gradient(50% 500% at 50% -420%, rgba(64, 97, 231, 0.4) 80%, rgba(0, 0, 0, 0.1) 100%), black;
+    -webkit-background-clip: padding-box;
+    border-bottom: 0;
+    background-clip: padding-box;
+    width: 180%;
+    left: -40%;
+}
+
+.trendingSection::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin-top: -.25rem;
+    border-radius: inherit;
+    background: linear-gradient(to right, rgba(33, 13, 22, 1) 16%, rgba(184, 40, 105, 1), rgba(229, 9, 20, 1), rgba(184, 40, 105, 1), rgba(33, 13, 22, 1) 84%);
+}
+
+.numberStroke {
+    -webkit-text-stroke: 3px #ffffff;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    font-weight: 900;
+}
+
+.numberStroke::before {
+    content: attr(data-number);
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-text-stroke: 0;
+    -webkit-text-fill-color: black;
+    z-index: -1;
+}
+
+/* Reasons to join background */
+
+.reason2join {
+    background: linear-gradient(149deg, #192247 0%, #210e17 96.86%);
+}
+
+/* FAQ Accordion Styles */
+
+.faqToggle {
+    display: none;
+}
+
+.faqLabel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    cursor: pointer;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: white;
+    transition: color 0.3s ease;
+    background: #2D2D2D;
+    margin-bottom: 0.1rem;
+}
+
+.faqLabel:hover {
+    background: #414141;
+}
+
+.faqIcon {
+    transition: transform 0.3s ease;
+}
+
+.faqToggle:checked+.faqLabel .faqIcon {
+    transform: rotate(45deg);
+}
+
+.faqContent {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.39s ease;
+    padding: 0;
+    background-color: #2D2D2D;
+}
+
+.faqToggle:checked~.faqContent {
+    max-height: 500px;
+    /* padding: 0 0 1.5rem 0; */
+    transition: max-height 0.9s ease;
+}
+
+.faqContent p {
+    padding: 1rem 2rem;
+    line-height: 1.6;
+    color: white;
+}
