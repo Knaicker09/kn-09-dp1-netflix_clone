@@ -27,7 +27,7 @@ export default async function middleware(req: NextRequest) {
 
   return NextResponse.next();
 }
- 
+
 // Configure which routes the middleware should run on
 export const config = {
   matcher: [
